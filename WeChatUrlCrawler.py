@@ -19,12 +19,11 @@ user_agent_list = [
 
 # 目标url
 url = "https://mp.weixin.qq.com/cgi-bin/appmsg"
-cookie = "appmsglist_action_3211828736=card; ua_id=xf1IJPpCxrOkzx7HAAAAAEfpoLhrY0vf20LrgWcLYec=; wxuin=86999637334436; mm_lang=zh_CN; sig_login=h01d1e20db4fb703b033225cbbdba00bbe3cdc4ec6e572a379ee6538c8469a1e7fb7fa70fbab1502f6e; poc_sid=HKiMpWSj06-7f7D34kNWA1XMhli1chB19UDerP16; rewardsn=; wxtokenkey=777; _clck=3211828736|1|fd4|0; uuid=f96f4e9ebfb016ffe047415406c68016; rand_info=CAESIFj8UW/i916e5Wjx44FVtePMf/z26P4BzVg7WkY8+mZ3; slave_bizuin=3211828736; data_bizuin=3239826583; bizuin=3211828736; data_ticket=MY7BzVOs/eOR0o7KVMAz6kU7axsoln5E9yHzB8UFfr4OuWzLWc6wCq84S58drkZe; slave_sid=Nk9ibUw5QjVCT2czNFBEMDNyY3NVZlFIaEc0TjJ2SFdqVzhDaG9SNnpiZk5EMUJIOVNIeGRocUNiaFAyVFBqMWVfNWV4WVpwN0Z1aUk1WE43Y3UycUhBVm5ZYWM0UGhTWkVueFlFRk5PMTB2M0RPWlI2b0FRaVpCcEJYaW9Wcjd4TmluOGZwSVVDdnpkd0tE; slave_user=gh_2d4656f66685; xid=0c74682e70906d561039ca6e24d8ae8b; _clsk=o58sgn|1688813027677|1|1|mp.weixin.qq.com/weheat-agent/payload/record"
+cookie = "appmsglist_action_3938608885=card; appmsglist_action_3935619326=card; RK=dtHkk/fYaX; ptcz=19c2f43d5a09cb8a05d14c61e4085c44714fad1071c125461284666a60a97ef8; ua_id=euXJRprud7Td8gB9AAAAAHru4dL-IXNzwepHGzvzXAo=; wxuin=99170031338042; pgv_pvid=7665033420; qq_domain_video_guid_verify=dc05d329a5e3b6a6; _qimei_uuid42=17b0513202d1001c5156e83b40666491e4572e0a09; _qimei_fingerprint=9f4553ac0c1bde71f90a2b70947ea519; _qimei_q36=; _qimei_h38=98e595e55156e83b406664910300000ca17b05; mm_lang=zh_CN; ts_uid=2444490576; noticeLoginFlag=1; rewardsn=; wxtokenkey=777; cert=49b8mszOGixPO33oZdv6uDISXBg3D5u1; sig=h0154a50c1df9586793c7fad43b04e5f74eced8422033e0c0c9add69548a66bd59965b9c9cc405a3d70; uuid=d2e1b79ef37ddec9b882d328aeabc14d; rand_info=CAESII6wO2FqgO9tLc8x1L/Py5Bx/kdKJAvpJV6i2suKcnD3; slave_bizuin=3935619326; data_bizuin=3935619326; bizuin=3935619326; data_ticket=qClm9TexaL2ZN0xpX8pOEzm5EEDnBKCobt8M8189en4LyHufcQSGU0jstBbrI1Si; slave_sid=UWwwSmRYckViNXNVUUxadmhUaFAyWVFHSXg2cEdmMFBZS1ZEYnpwbkp0Yl9GM1loWm1tSTcycU16Mm9VeG1HeFpLTGZuX0pYQnlUb2p3V2cwWEZSUVZSSV9BWER0V1c0VmlsaF9Tc2V0TDJfQlY2bVMyWU1ZOXV5R2hBenE0UUpWc3BRQ0VsS09IdmJNaTlJ; slave_user=gh_573b7fb7b5b3; xid=981355d99614165c3ec2cc54317ad8f1; _clck=3935619326|1|fhr|0; _clsk=1ssbx15|1703208122742|1|1|mp.weixin.qq.com/weheat-agent/payload/record"
 
 # 使用Cookie，跳过登陆操作
-
 data = {
-    "token": "20884314",
+    "token": "913700746",
     "lang": "zh_CN",
     "f": "json",
     "ajax": "1",
@@ -32,7 +31,7 @@ data = {
     "begin": "0",
     "count": "5",
     "query": "",
-    "fakeid": "这里进行替换",
+    "fakeid": "MjM5MzI5NTU3MQ==",
     "type": "9",
 }
 headers = {
@@ -71,7 +70,8 @@ for i in range(page):
         items.append(time.strftime("%Y-%m-%d %H:%M:%S", t))
         content_list.append(items)
     print(i)
-    if (i > 0) and (i % 10 == 0):
+    # if (i > 0) and (i % 10 == 0):
+    if i == 2:
         name = ['title', 'link', 'create_time']
         test = pd.DataFrame(columns=name, data=content_list)
         test.to_csv("url.csv", mode='a', encoding='utf-8')
